@@ -1,0 +1,10 @@
+//logo-styles
+.logo {
+    width: 100%;
+    max-width: 8rem;
+    height: auto;
+
+    &--light {
+        filter: brightness(0) invert(1);
+    }
+}

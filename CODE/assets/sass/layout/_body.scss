@@ -1,0 +1,9 @@
+@use '../global/' as *;
+@use '../components/' as *;
+
+body {
+    position: relative;
+    @include flex;
+    min-height: 100vh;
+    background-color: $theme-white;
+}
