@@ -1,0 +1,350 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.logo {
+  width: 100%;
+  max-width: 8rem;
+  height: auto;
+}
+.logo--light {
+  filter: brightness(0) invert(1);
+}
+
+.btn {
+  width: 100%;
+  max-width: 7rem;
+  padding: 0.5rem 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  color: hsl(322, 100%, 66%);
+  border: 1px solid hsl(322, 100%, 66%);
+  border-radius: 2rem;
+  background-color: transparent;
+  box-shadow: 0px 0px 20px -8px rgba(0, 0, 0, 0.1), 0px 0px 20px -8px rgba(0, 0, 0, 0.1);
+}
+.btn--big {
+  padding: 0.8rem 3rem;
+  font-size: 0.9rem;
+}
+@media (hover: hover) {
+  .btn:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+}
+.btn--pink {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(322, 100%, 66%);
+}
+@media (hover: hover) {
+  .btn--pink:hover {
+    border-color: hsl(321, 100%, 78%);
+    background-color: hsl(321, 100%, 78%);
+  }
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 100%);
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 3rem;
+  padding-top: 8rem;
+}
+.hero__content {
+  text-align: center;
+  color: hsl(192, 100%, 9%);
+}
+.hero__title {
+  font: 700 1.6rem "Poppins", sans-serif;
+  margin-bottom: 1.5rem;
+}
+.hero__paragraph {
+  font: 600 0.875rem "Open Sans", sans-serif;
+  margin-bottom: 4rem;
+}
+.hero__image {
+  max-width: 20rem;
+}
+.hero__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+.hero__stats-item {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+.hero__stats-item::before {
+  display: block;
+  content: "";
+  text-align: left;
+  line-height: 0%;
+  width: 35px;
+  height: 30px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__stats-item-one::before {
+  background-image: url(../images/icon-communities.svg);
+}
+.hero__stats-item-two::before {
+  background-image: url(../images/icon-messages.svg);
+}
+.hero__stats-paragraph {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsla(192, 100%, 9%, 0.5);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.features__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 3rem;
+  background-color: hsl(207, 100%, 98%);
+}
+.features__card-image {
+  max-width: 18rem;
+  border: 1px solid;
+}
+.features__card-content {
+  text-align: center;
+  color: hsl(192, 100%, 9%);
+}
+.features__card-title {
+  font: 700 1.25rem "Poppins", sans-serif;
+  margin-bottom: 1rem;
+}
+.features__card-paragraph {
+  font: 600 0.875rem "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.community {
+  text-align: center;
+  padding: 3rem;
+  margin-bottom: 4rem;
+}
+.community__header {
+  font: 700 1.6rem "Poppins", sans-serif;
+  margin-bottom: 3rem;
+}
+.community__btn {
+  padding: 0.8rem 2rem;
+}
+
+footer {
+  color: hsl(0, 0%, 100%);
+  padding: 2rem;
+  background-color: hsl(192, 100%, 9%);
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+.newsletter__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.newsletter__paragraph {
+  font: 600 0.875rem "Open Sans", sans-serif;
+  line-height: 1.7;
+}
+.newsletter__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  font: 600 0.875rem "Open Sans", sans-serif;
+}
+.newsletter__form-email {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0.5rem;
+}
+.newsletter__form-btn {
+  align-self: flex-end;
+  width: 10rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: hsl(322, 100%, 66%);
+}
+
+.footer__main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.footer__logo {
+  max-width: 12.5rem;
+}
+.footer__paragraph {
+  font: 600 0.875rem "Open Sans", sans-serif;
+  line-height: 1.7;
+}
+.footer__address {
+  margin-top: 1rem;
+}
+.footer__address > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  font: 600 0.875rem "Open Sans", sans-serif;
+}
+.footer__address > *::before {
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  line-height: 0%;
+}
+.footer__address-phone {
+  margin-bottom: 1rem;
+}
+.footer__address-phone::before {
+  content: url(../images/icon-phone.svg);
+}
+.footer__address-email::before {
+  content: url(../images/icon-email.svg);
+}
+.footer__socials {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.footer__socials-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon {
+  width: 100%;
+  aspect-ratio: 3/3;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+.icon:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=styles.css.map */
