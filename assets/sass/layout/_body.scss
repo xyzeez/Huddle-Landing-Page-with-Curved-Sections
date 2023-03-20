@@ -4,6 +4,7 @@
 body {
     position: relative;
     @include flex;
+    width: 100%;
     min-height: 100vh;
     background-color: $theme-white;
 }

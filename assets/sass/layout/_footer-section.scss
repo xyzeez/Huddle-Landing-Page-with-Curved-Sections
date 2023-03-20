@@ -2,66 +2,73 @@
 @use '../components/' as *;
 
 footer {
-    color: $theme-white;
-    padding: 2rem;
+    position: relative;
+    color: $theme-light-white;
     background-color: $theme-dark-cyan;
-}
 
-.newsletter {
-    @include flex($align: start);
-    gap: 1.5rem;
-    margin-bottom: 4rem;
-
-    &__title {
-        font: {
-            family: $theme-paragraph-font;
-            size: 1.25rem;
-            weight: $medium;
-        }
-    }
-
-    &__paragraph {
-        font: $theme-paragraph-style;
-        line-height: 1.7;
-    }
-
-    &__form {
-        @include flex;
-        gap: 1rem;
+    &::before {
+        position: absolute;
+        content: "";
+        top: -7.9rem;
         width: 100%;
-        font: $theme-paragraph-style;
-
-        &-email {
-            display: block;
-            width: 100%;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 0.5rem;
+        height: 8rem;
+        z-index: -1;
+        background: {
+            size: 100%;
+            repeat: no-repeat;
+            position-y: 100%;
+            image: url(../images/bg-footer-top-mobile.svg);
         }
 
-        &-btn {
-            align-self: flex-end;
-            width: 10rem;
-            font-size: 1rem;
-            font-weight: $bold;
-            color: $theme-white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 0.5rem;
-            background-color: $theme-pink;
+        @include breakpoint (tablet-xl) {
+            top: -11.9rem;
+            height: 12rem;
+        }
+
+        @include breakpoint (desktop) {
+            top: -14.8rem;
+            height: 15rem;
         }
     }
 }
 
 .footer {
 
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        max-width: 100%;
+        margin: 4rem 2rem;
+
+        @include breakpoint (tablet-xl) {
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            margin: 4rem;
+        }
+
+        @include breakpoint (desktop) {
+            justify-content: space-between;
+        }
+
+    }
+
     &__main {
         @include flex($align: flex-start);
         gap: 1.5rem;
+        //width: 100%;
+
+        @include breakpoint (desktop) {
+             max-width: 35%;
+        }
     }
 
     &__logo {
         max-width: 12.5rem;
+
+        @include breakpoint (desktop) {
+            max-width: 18.5rem;
+        }
     }
 
     &__paragraph {
@@ -105,12 +112,30 @@ footer {
         gap: 1rem;
         margin-top: 1rem;
 
+        @include breakpoint (tablet) {
+            margin-top: 1.5rem;
+        }
+
+        @include breakpoint (desktop) {
+            margin-top: 3rem;
+        }
+
         &-item {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 1.5rem;
             height: 1.5rem;
+
+            @include breakpoint (tablet-xl) {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            @include breakpoint (desktop) {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
         }
     }
 
@@ -124,5 +149,72 @@ footer {
 
     &:hover {
         transform: scale(1.1);
+    }
+}
+
+.newsletter {
+    @include flex($align: flex-start);
+    gap: 1.5rem;
+    line-height: 1;
+
+    @include breakpoint (desktop) {
+         max-width: 45%;
+    }
+
+    &__title {
+        font: {
+            family: $theme-paragraph-font;
+            size: clamp(1.25rem, 3.5vw, 1.5rem);
+            weight: $medium;
+        }
+
+        color: $theme-white;
+    }
+
+    &__paragraph {
+        font: $theme-paragraph-style;
+        line-height: 1.7;
+
+        @include breakpoint (tablet-xl) {
+            max-width: 90%; 
+        }
+
+        @include breakpoint (desktop) {
+             max-width: 85%;
+        }
+    }
+
+    &__form {
+        @include flex;
+        gap: 1rem;
+        font: $theme-paragraph-style;
+        width: 100%;
+
+        @include breakpoint (desktop) {
+             flex-direction: row;
+             align-items: flex-end;
+             justify-content: flex-end;
+             gap: 8%;
+        }
+
+        &-email {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 0.5rem;
+        }
+
+        &-btn {
+            align-self: flex-end;
+            width: 100%;
+            max-width: 10rem;
+            font-size: 1rem;
+            font-weight: $bold;
+            color: $theme-white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: $theme-pink;
+        }
     }
 }

@@ -1,3 +1,5 @@
+@use '../components/' as *;
+
 //logo-styles
 .logo {
     width: 100%;
@@ -7,4 +9,18 @@
     &--light {
         filter: brightness(0) invert(1);
     }
+
+    @include breakpoint (tablet) {
+        max-width: 10rem;
+    }
+
+    @include breakpoint (tablet-xl) {
+        max-width: 13rem;
+    }
+
+    // @include breakpoint (desktop) {
+    //     &__logo {
+    //         max-width: 15rem;
+    //     }
+    // }
 }

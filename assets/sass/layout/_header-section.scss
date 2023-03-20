@@ -7,4 +7,18 @@ header {
     width: 100%;
     @include flex(row, $justify: space-between);
     padding: 1rem;
+
+    @include breakpoint (tablet) {
+        padding: 2rem;
+    }
+
+    @include breakpoint (tablet-xl) {
+        padding: 3rem;
+    }
+
+    @include breakpoint (desktop) {
+        padding: 3rem 5rem;
+    }
 }
+
+

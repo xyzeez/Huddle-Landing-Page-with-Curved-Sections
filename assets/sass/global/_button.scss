@@ -19,7 +19,7 @@ $btn-bover-box-shadow:
 
     font-family: $theme-paragraph-font;
     font-weight: $medium;
-    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
     text-align: center;
     text-decoration: none;
     color: $theme-pink;
@@ -29,9 +29,18 @@ $btn-bover-box-shadow:
     background-color: transparent;
     box-shadow: $btn-box-shadow;
 
+    @include breakpoint (tablet) {
+        max-width: 8rem;
+    }
+
     &--big {
         padding: 0.8rem 3rem;
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+
+        @include breakpoint (tablet) {
+            padding: 1rem 4rem;
+            border-radius: 3rem;
+        }
     }
 
     @include hover {

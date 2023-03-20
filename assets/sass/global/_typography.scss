@@ -8,6 +8,6 @@ $medium: 600;
 $bold: 700;
 
 //theme-font-styles
-$theme-header-style: $bold 1.6rem $theme-header-font;
-$theme-subheader-style: $bold 1.25rem $theme-header-font;
-$theme-paragraph-style: $medium 0.875rem $theme-paragraph-font;
+$theme-header-style: $bold clamp(1.6rem, 3.5vw, 3.5rem) $theme-header-font;
+$theme-subheader-style: $bold clamp(1.25rem, 3.5vw, 2.95rem) $theme-header-font;
+$theme-paragraph-style: $medium clamp(0.875rem, 3.5vw, 1.1rem) $theme-paragraph-font;
