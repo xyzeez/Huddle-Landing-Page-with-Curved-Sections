@@ -18,9 +18,7 @@
         max-width: 13rem;
     }
 
-    // @include breakpoint (desktop) {
-    //     &__logo {
-    //         max-width: 15rem;
-    //     }
-    // }
+    @include breakpoint (desktop) {
+        max-width: 15rem;
+    }
 }

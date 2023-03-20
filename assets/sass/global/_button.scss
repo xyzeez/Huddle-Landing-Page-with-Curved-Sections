@@ -29,15 +29,20 @@ $btn-bover-box-shadow:
     background-color: transparent;
     box-shadow: $btn-box-shadow;
 
-    @include breakpoint (tablet) {
-        max-width: 8rem;
-    }
-
     &--big {
         padding: 0.8rem 3rem;
         font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    }
 
-        @include breakpoint (tablet) {
+    &--pink {
+        color: $theme-white;
+        background-color: $theme-pink;
+    }
+
+    @include breakpoint (tablet) {
+        max-width: 8rem;
+
+        &--big {
             padding: 1rem 4rem;
             border-radius: 3rem;
         }
@@ -47,17 +52,11 @@ $btn-bover-box-shadow:
         &:hover {
             box-shadow: $btn-bover-box-shadow;
         }
-    }
 
-    &--pink {
-        color: $theme-white;
-        background-color: $theme-pink;
-
-        @include hover {
-            &:hover {
-                border-color: $theme-light-pink;
-                background-color: $theme-light-pink;
-            }
+        &--pink {
+            border-color: $theme-light-pink;
+            background-color: $theme-light-pink;
         }
     }
+
 }

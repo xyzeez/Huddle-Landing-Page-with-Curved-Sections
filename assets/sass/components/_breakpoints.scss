@@ -12,9 +12,3 @@ $screen-size : (
         @content        
     }
 }
-
-@mixin break ($size) {
-    @media screen and (min-width: $size) {
-        @content
-    }
-}

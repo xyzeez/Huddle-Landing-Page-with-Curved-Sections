@@ -9,31 +9,16 @@
         gap: 4rem;
         padding: 4rem 3rem;
 
-        @include breakpoint (tablet) {
-            flex-direction: row-reverse;
-            padding: 4rem;
-        }
-
-        @include breakpoint (desktop) {
-            padding: 6rem;
-        }
-
         &-image {
             max-width: 18rem;
-
-            @include breakpoint (desktop) {
-                max-width: 40%;
-            }
         }
 
         &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             color: $theme-dark-cyan;
-
-            @include breakpoint (tablet) {
-                text-align: left;
-            }
-
         }
 
         &-title {
@@ -44,6 +29,8 @@
         &-paragraph {
             font: $theme-paragraph-style;
             font-weight: $medium;
+            max-width: 85%;
+            
         }
 
         &-two {
@@ -51,11 +38,6 @@
                 top: 10rem;
                 bottom: 12rem;
             }
-
-            @include breakpoint (tablet) {
-                flex-direction: row;
-            }
-
         }
 
         &-one, &-three {
@@ -72,40 +54,16 @@
                     size: 100%;
                     repeat: no-repeat;
                 }
-
-                @include breakpoint (tablet) {
-                    height: 10rem;
-                }
-
-                @include breakpoint (desktop) {
-                    height: 12rem;
-                }
             }
 
             &::before {
                 top: -7.9rem;
                 background-position-y: 100%;
-
-                @include breakpoint (tablet) {
-                    top: -9.9rem;
-                }
-
-                @include breakpoint (desktop) {
-                    top: -11.9rem;
-                }
             }
 
             &::after {
                 bottom: -7.9rem;
                 background-position-y: 0%;
-
-                @include breakpoint (tablet) {
-                    bottom: -9.9rem;
-                }
-
-                @include breakpoint (desktop) {
-                    bottom: -11.9rem;
-                }
             }
         }
 
@@ -113,18 +71,10 @@
 
             &::before {
                 background-image: url(../images/bg-section-top-mobile-1.svg);
-
-                @include break (768px) {
-                    background-image: url(../images/bg-section-top-desktop-1.svg);
-                }
             }
 
             &::after {
                 background-image: url(../images/bg-section-bottom-mobile-1.svg);
-
-                @include break (768px) {
-                    background-image: url(../images/bg-section-bottom-desktop-1.svg);
-                }
             }
         }
 
@@ -132,19 +82,87 @@
 
             &::before {
                 background-image: url(../images/bg-section-top-mobile-2.svg);
-
-                @include break (768px) {
-                    background-image: url(../images/bg-section-top-desktop-2.svg);
-                }
             }
 
             &::after {
                 background-image: url(../images/bg-section-bottom-mobile-2.svg);
+            }
+        }
 
-                @include break (768px) {
+        @include breakpoint (tablet) {
+            flex-direction: row-reverse;
+            padding: 4rem;
+
+            &-content {
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            &-two {
+                flex-direction: row;
+            }
+
+            &-one, &-three {
+                
+                &::before, &::after {
+                    height: 10rem;
+                }
+
+                &::before {
+                    top: -9.9rem;
+                }
+
+                &::after {
+                    bottom: -9.9rem;
+                }
+            }
+
+            &-one {
+                &::before {
+                    background-image: url(../images/bg-section-top-desktop-1.svg);
+                }
+                
+                &::after {
+                    background-image: url(../images/bg-section-bottom-desktop-1.svg);
+                }
+            }
+
+            &-three {
+                &::before {
+                    background-image: url(../images/bg-section-top-desktop-2.svg);
+                }
+                
+                &::after {
                     background-image: url(../images/bg-section-bottom-desktop-2.svg);
                 }
             }
+        }
+
+        @include breakpoint (desktop) {
+            padding: 6rem;
+
+            &-image {
+                max-width: 40%;
+            }
+
+            &-one, &-three {
+
+                &::before, &::after {
+                    height: 12rem;
+                }
+
+                &::before {
+                    top: -11.9rem;
+                }
+
+                &::after {
+                    bottom: -11.9rem;
+                }
+            }
+        }
+
+        @include breakpoint (desktop-xl) {
+            gap: 8rem;
         }
 
     }
@@ -158,39 +176,39 @@
         bottom: 12rem;
     }
 
+    &__header {
+        font: $theme-subheader-style;
+        margin-bottom: 3rem;
+    }
+
+    &__btn {
+        padding: 0.8rem 2rem;
+    }
+
     @include breakpoint (tablet) {
         margin: {
             top: 12rem;
             bottom: 15rem;
-        }         
+        }
+        
+        &__btn {
+            padding: 1rem 4rem;
+            border-radius: 3rem;
+        }
     }
 
     @include breakpoint (desktop) {
         margin: {
             top: 15rem;
             bottom: 18rem;
-        }         
-    }
-
-    &__header {
-        font: $theme-subheader-style;
-        margin-bottom: 3rem;
-
-        @include breakpoint (desktop) {
+        }
+        
+        &__header {
             font-size: 2.5rem;
             margin-bottom: 4rem;
         }
-    }
 
-    &__btn {
-        padding: 0.8rem 2rem;
-
-        @include breakpoint (tablet) {
-            padding: 1rem 4rem;
-            border-radius: 3rem;
-        }
-
-        @include breakpoint (desktop) {
+        &__btn {
             padding: 1.5rem 6.5rem;
             border-radius: 5rem;
         }

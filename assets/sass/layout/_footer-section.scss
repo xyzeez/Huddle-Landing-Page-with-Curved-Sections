@@ -40,35 +40,15 @@ footer {
         gap: 4rem;
         max-width: 100%;
         margin: 4rem 2rem;
-
-        @include breakpoint (tablet-xl) {
-            flex-direction: row-reverse;
-            align-items: flex-start;
-            margin: 4rem;
-        }
-
-        @include breakpoint (desktop) {
-            justify-content: space-between;
-        }
-
     }
 
     &__main {
         @include flex($align: flex-start);
         gap: 1.5rem;
-        //width: 100%;
-
-        @include breakpoint (desktop) {
-             max-width: 35%;
-        }
     }
 
     &__logo {
         max-width: 12.5rem;
-
-        @include breakpoint (desktop) {
-            max-width: 18.5rem;
-        }
     }
 
     &__paragraph {
@@ -85,6 +65,12 @@ footer {
             align-items: center;
             gap: 1.2rem;
             font: $theme-paragraph-style;
+
+            &:hover {
+                @include hover {
+                    color: $theme-pink;
+                }
+            }
 
             &::before {
                 display: inline-block;
@@ -112,29 +98,58 @@ footer {
         gap: 1rem;
         margin-top: 1rem;
 
-        @include breakpoint (tablet) {
-            margin-top: 1.5rem;
-        }
-
-        @include breakpoint (desktop) {
-            margin-top: 3rem;
-        }
-
         &-item {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 1.5rem;
             height: 1.5rem;
+        }
+    }
 
-            @include breakpoint (tablet-xl) {
+    @include breakpoint (tablet-xl) {
+        &__socials {
+            margin-top: 1.5rem;
+        }
+    }
+
+    @include breakpoint (tablet-xl) {
+
+        &__wrapper {
+            flex-direction: row-reverse;
+            align-items: flex-start;
+            margin: 4rem;
+        }
+
+        &__socials {
+            &-item {
                 width: 2rem;
                 height: 2rem;
             }
+        }
 
-            @include breakpoint (desktop) {
+    }
+
+    @include breakpoint (desktop) {
+
+        &__wrapper {
+            justify-content: space-between;
+        }
+        
+        &__main {
+            max-width: 35%;
+        }
+
+        &__logo {
+            max-width: 18.5rem;
+        }
+
+        &__socials {
+            margin-top: 3rem;
+
+            &-item {
                 width: 2.5rem;
-                height: 2.5rem;
+                height: 2.5rem
             }
         }
     }
@@ -157,10 +172,6 @@ footer {
     gap: 1.5rem;
     line-height: 1;
 
-    @include breakpoint (desktop) {
-         max-width: 45%;
-    }
-
     &__title {
         font: {
             family: $theme-paragraph-font;
@@ -174,14 +185,6 @@ footer {
     &__paragraph {
         font: $theme-paragraph-style;
         line-height: 1.7;
-
-        @include breakpoint (tablet-xl) {
-            max-width: 90%; 
-        }
-
-        @include breakpoint (desktop) {
-             max-width: 85%;
-        }
     }
 
     &__form {
@@ -189,13 +192,6 @@ footer {
         gap: 1rem;
         font: $theme-paragraph-style;
         width: 100%;
-
-        @include breakpoint (desktop) {
-             flex-direction: row;
-             align-items: flex-end;
-             justify-content: flex-end;
-             gap: 8%;
-        }
 
         &-email {
             width: 100%;
@@ -215,6 +211,28 @@ footer {
             border: none;
             border-radius: 0.5rem;
             background-color: $theme-pink;
+        }
+    }
+
+    @include breakpoint (tablet-xl) {
+
+        &__paragraph {
+            max-width: 90%;
+        }
+    }
+
+    @include breakpoint (desktop) {
+        max-width: 45%;
+
+        &__paragraph {
+            max-width: 85%;
+        }
+
+        &__form {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 8%;
         }
     }
 }
